@@ -1,0 +1,148 @@
+<!-- below are your codes to modify the tables -->
+<div class="container-fluid py-3">
+   <div class="row w-100 m-0">
+      <div class="col">
+         <div class="card shadow-sm">
+            <div class="card-header bg-white border-0">
+               <div class="row">
+                  <div class="col-12 col-sm-6">
+                     <h4>Categories</h4>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                     <div class="d-flex justify-content-end align-items-center">
+                        <button class="btn btn-dark mr-1" (click)="openProjectCategoryDialog(projectCategoryModal)">
+                           Add Category
+                        </button>
+                        <button class="btn btn-dark mr-1" routerLink="/projects">
+                           Goto Projects
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="table-responsive">
+               <!-- below is modified bootstrap table codes -->
+               <table class="table table-flush m-0">
+                  <thead class="thead-light">
+                     <tr>
+                        <th scope="col">S/N</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Actions</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let category of categoriesObservable | async; index as idx">
+                        <th scope="row">{{idx + 1}}</th>
+                        <!-- names used below must match names used in your data table -->
+                        <td>{{category["categoryName"]}}</td>
+                        <td>{{category["categoryDescription"]}}</td>
+                        <td>
+                           <h5>
+                              <span class="badge rounded-pill {{ category['active'] ? 'bg-success' : 'bg-warning' }}">
+                                 {{ category ['active'] ? "Active" : "Inactive" }}
+                              </span>
+                           </h5>
+                        </td>
+                        <td>
+                           <button type="button" class="btn btn-sm btn-dark mr-1 mb-1"
+                              [disabled]="category['categoryImageUrl']"> View Image </button>
+                           <button type="button" class="btn btn-sm btn-dark mr-1 mb-1"
+                              (click)="openProjectCategoryDialog(projectCategoryModal, category)"> Update </button>
+                           <button type="button" class="btn btn-sm btn-danger mr-1 mb-1"> Delete </button>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- ng-template = custom tag and projectCategoryModal = parameter for modal service -->
+<ng-template #projectCategoryModal let-modal class="bg-modal">
+   <!-- Modal -->
+   <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Category Details</h5>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+         <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+   <div class="modal-body">
+      <form [formGroup]="projectCategoryForm" ngNativeValidate>
+         <div class="modal-body">
+            <div class="form-group col mt-2">
+               <label>Title</label>
+               <input type="text" class="form-control" name="title" formControlName="categoryName">
+            </div>
+            <div class="form-group col mt-2">
+               <label>Description</label>
+               <textarea type="text" class="form-control" name="title" rows="5"
+                  formControlName="categoryDescription"></textarea>
+            </div>
+            <div class="form-group col mt-2">
+               <label for="imageFile">Select Image File</label>
+               <div class="custom-file">
+                  <input type="file" class="form-control" id="imageFile" (change)="checkFileType($event)">
+                  <!-- 
+                  <label class="custom-file-label p-1 d-flex align-items-center" for="imageFile">
+                     <span *ngIf="tempFile == null">Choose File</span>
+                     <span *ngIf="tempFile != null">{{ tempFile.name }}</span>
+                  </label> 
+                  -->
+               </div>
+            </div>
+            <div class="form-group col mt-2 d-flex flex-column">
+               <label for="slideStatus">Status</label>
+               <div class="btn-group btn-group-toggle" ngbRadioGroup>
+                  <label ngbButtonLevel class="btn-primary btn-sm mr-2">
+                     <input ngbButton type="radio" class="btn-check" [value]="true" formControlName="active"
+                        name="active"> Active
+                  </label>
+                  <label ngbButtonLevel class="btn-primary btn-sm mr-2">
+                     <input ngbButton type="radio" class="btn-check" [value]="false" formControlName="active"
+                        name="active"> Inactive
+                  </label>
+               </div>
+            </div>
+         </div>
+      </form>
+   </div>
+   <div class="modal-footer">
+      <button type="button" class="btn btn-dark btn-sm" (click)="modal.dismiss('')">
+         Cancel
+      </button>
+      <button type="submit" class="btn btn-dark btn-sm" [disabled]="loader">
+         Save
+         <span *ngIf="loader">&nbsp;</span>
+         <div *ngIf="loader" class="spinner-border spinner-border-sm text-white" role="status">
+            <span class="sr-only">Loading...</span>
+         </div>
+      </button>
+   </div>
+</ng-template>
+
+
+
+<!-- original code for modal pop-up -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            ...
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+         </div>
+      </div>
+   </div>
+</div> -->

@@ -1,0 +1,212 @@
+<div class="col w-100 m-0 mt-3">
+   <div class="col-12 col-sm-8 order-0 order-sm-0">
+      <div class="container1">
+         <div class="col">
+            <div class="card shadow-sm">
+               <div class="card-header bg-white border-0">
+                  <h4>AnnaTech Meetings Scheduler Meetings</h4>
+                  <div class="card">
+                     <button type="button" class="btn btn-sm btn-dark mr-1 mb-1"
+                        style="font-size: 15px; font-weight: bold" (click)="openModal(meetingModal)">
+                        Create / Add New Meeting
+                     </button>
+                  </div>
+               </div>
+               <div class="table-responsive">
+                  <!-- below is modified bootstrap table codes -->
+                  <table class="table table-flush m-0">
+                     <thead class="thead-light">
+                        <tr>
+                           <th scope="col">S/N</th>
+                           <th scope="col">Meeting Topics</th>
+                           <th scope="col">People</th>
+                           <th scope="col">Email Address</th>
+                           <th scope="col">Mtg. Date</th>
+                           <th scope="col">Mtg. Time</th>
+                           <th scope="col">Added On</th>
+                           <th scope="col">Short Descriptions</th>
+                           <th scope="col">Actions</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr *ngFor="let meeting of meetingsObservable | async; index as idx">
+                           <th scope="row">{{idx + 1}}</th>
+                           <!-- names used below must match names used in your data table -->
+                           <td>{{meeting["meetingTopic"]}}</td>
+                           <td>{{meeting["numPeople"]}}</td>
+                           <td>{{meeting["emailAddress"]}}</td>
+                           <td>{{meeting["meetingDate"]}}</td>
+                           <td>{{meeting["meetingTime"]}}</td>
+                           <td>{{meeting["addedOn"]}}</td>
+                           <td>{{meeting["meetingDescription"]}}</td>
+                           <!-- creates an "action" button -->
+                           <td>
+                              <button type="button" class="btn btn-sm btn-dark mr-1 mb-1"
+                                 (click)="openImageModal(viewImageModal, meeting.images, meeting.thumbnailImage)">
+                                 View Files
+                              </button>
+                              <button type="button" class="btn btn-sm btn-dark mr-1 mb-1"
+                                 (click)="openModal(meetingModal, meeting)">
+                                 Update Meeting
+                              </button>
+                              <button type="button" class="btn btn-sm btn-danger mr-1 mb-1"
+                                 (click)="deleteMeeting(meeting)">
+                                 Delete Meeting
+                              </button>
+                              <!-- <button type="button" class="btn btn-sm btn-danger mr-1 mb-1"
+                                 (click)="deleteMeeting(idx)"> 
+                                 Delete 
+                              </button> -->
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <pre></pre>
+   <pre></pre>
+   <div class="col-12 col-sm-8 order-1 order-sm-1 mt-3 mt-sm-0">
+      <div class="container2">
+         <div class="form-group col mb-2">
+            <div class="card">
+               <!-- <h4>Ecommerce Calendar Management</h4> -->
+               <button id="btn-toggle" (click)="toggleWeekends()">Toggle Weekends / Weekdays</button>
+               <full-calendar [options]="calendarOptions"></full-calendar>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<!--view images-->
+<ng-template #viewImageModal let-modal>
+   <div class="modal-header border-0 d-flex justify-content-between align-items-center">
+      <h3>Images</h3>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+         <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+   <div class="modal-body">
+      <div class="row">
+         <div class="col-12 col-sm-2 px-0 border-right verticalScroll">
+            <ul class="list-group list-group-flush">
+               <li class="list-hover list-group-item" *ngFor="let imgSrc of tempImageFiles; index as idx"
+                  (click)="selectedImageIdx = idx">
+                  <div class="position-absolute mt-2" *ngIf="thumbnailImageIdx === idx">
+                     <h4 class="badge rounded-pill bg-secondary">Thumbnail Image</h4>
+                  </div>
+                  <img [src]="imgSrc" [alt]="imgSrc" class="img-fluid rounded shadow-sm" height="64px" loading="lazy">
+               </li>
+            </ul>
+         </div>
+         <div class="col-12 col-sm-10">
+            <div class="sticky-top">
+               <img [src]="tempImageFiles[selectedImageIdx]" [alt]="tempImageFiles[selectedImageIdx]"
+                  class="img-fluid shadow-sm img-style" loading="lazy" title="View Full Image"
+                  (click)="openImage(tempImageFiles[selectedImageIdx])">
+            </div>
+         </div>
+      </div>
+      <!-- <div class="col-12 d-flex align-items-center justify-content-center">
+        <img [src]="imageUrl" class="img-fluid shadow-sm" alt="" style="height: 25em;">
+      </div> -->
+   </div>
+</ng-template>
+
+
+<!-- create / update meeting-->
+<ng-template #meetingModal let-modal class="bg-modal">
+   <div class="modal-header bg-primary">
+      <h5 class="modal-title" id="exampleModalLabel">Create/Update Meeting</h5>
+      <button type="button" class="btn-close btn-secondary" aria-label="Close" (click)="modal.dismiss('Cross click')">
+         <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+   <div class="modal-body">
+      <form [formGroup]="meetingForm" ngNativeValidate>
+         <!-- <form [formGroup]="meetingForm" ngNativeValidate (ngSubmit)="addMeeting(meetingForm)"> -->
+         <div class="modal-body">
+            <div class="form-group col mt-2">
+               <label>Enter Meeting Topic</label>
+               <input type="text" class="form-control" name="meetingTopic" formControlName="meetingTopic"
+                  placeholder="Enter Meeting Topic" required>
+            </div>
+            <div class="form-group col mt-2">
+               <label>Number Of People</label>
+               <input type="text" class="form-control" name="numPeople" formControlName="numPeople"
+                  placeholder="Enter Number Of People" required>
+            </div>
+            <div class="form-group col mt-2">
+               <label>Email Address</label>
+               <input type="text" class="form-control" name="emailAddress" formControlName="emailAddress"
+                  formControlName="emailAddress" placeholder="jdoe@test.com">
+            </div>
+            <div class="form-group col mt-2">
+               <div class="row">
+                  <div class="col">
+                     <label id="MM-DD-YYYY">Meeting Date</label>
+                     <input type="date" class="form-control" name="meetingDate" formControlName="meetingDate"
+                        formControlName="meetingDate" placeholder="MM-DD-YYYY" min="{{minDate}}">
+                  </div>
+                  <div class="col">
+                     <label id="HH:MM AM/PM">Meeting Time</label>
+                     <input type="text" class="form-control" name="meetingTime" formControlName="meetingTime"
+                        formControlName="meetingTime" [ngxTimepicker]="picker" placeholder="HH:MM AM/PM">
+                     <ngx-material-timepicker #picker></ngx-material-timepicker>
+                  </div>
+               </div>
+            </div>
+            <div class="form-group col mt-2">
+               <label>Added On</label>
+               <input type="text" class="form-control eventstarttitle" name="addedOn" formControlName="addedOn"
+                  formControlName="addedOn" [readonly]="true">
+            </div>
+            <div class="form-group col mt-2">
+               <label>Short Descriptions (Optional)</label>
+               <textarea type="text" class="form-control" name="meetingDescription" formControlName="meetingDescription"
+                  formControlName="meetingDescription" placeholder="Write Short Descriptions Here" rows="2"></textarea>
+            </div>
+            <div class="form-group col mt-2">
+               <label for="imageFile">Select Files</label>
+               <div class="custom-file">
+                  <input type="file" class="form-control" id="imageFile" (change)="checkFileType($event)">
+                  <!-- <label class="custom-file-label p-1 d-flex align-items-center" for="imageFile">
+                        <span *ngIf="tempFile == null">Choose file</span>
+                        <span *ngIf="tempFile != null">{{ tempFile.name }}</span>
+                    </label> -->
+               </div>
+            </div>
+            <div class="form-group col mt-2 d-flex flex-column">
+               <label for="slideStatus">Meeting Status</label>
+               <div class="btn-group btn-group-toggle" ngbRadioGroup>
+                  <label ngbButtonLabel class="btn-primary btn-sm mr-2">
+                     <input ngbButton type="radio" class="btn-check" [value]="true" formControlName="active"
+                        name="active">Active
+                  </label>
+                  <label ngbButtonLabel class="btn-danger btn-sm">
+                     <input ngbButton type="radio" class="btn-check" [value]="false" formControlName="active"
+                        name="active">Inactive
+                  </label>
+               </div>
+            </div>
+         </div>
+      </form>
+   </div>
+   <div class="modal-footer">
+      <button type="button" class="btn btn-secondary btn-sm" (click)="modal.dismiss('')">
+         Cancel
+      </button>
+      <button type="button" class="btn btn-dark btn-sm" [disabled]="loader" (click)="onSubmit(meetingForm)"
+         (click)="modal.dismiss(addMeeting(meetingForm))" [disabled]="!meetingForm.valid" id="saveBtn">
+         Save
+         <span *ngIf="loader">&nbsp;</span>
+         <div *ngIf="loader" class="spinner-border spinner-border-sm text-white" role="status">
+            <span class="sr-only">Loading...</span>
+         </div>
+      </button>
+   </div>
+</ng-template>

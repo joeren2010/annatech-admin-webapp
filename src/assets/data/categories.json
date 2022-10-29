@@ -1,0 +1,18 @@
+[
+   {
+      "categoryId": 1,
+      "categoryName": "Electronics",
+      "categoryDescription": "The field of electronics is a branch of physics and electrical engineering that deals with the emissions, behaviors and effects of electrons using electronic devices.",
+      "categoryImageUrl": "",
+      "active": true,
+      "addedOn": "August 10 2020"
+   },
+   {
+      "categoryId": 2,
+      "categoryName": "Gifts & Crafts",
+      "categoryDescription": "The gift and crafts industry is using new technologies in its artistry and marketing departments thus making her artists more efficient and expanding its outreach.",
+      "categoryImageUrl": "",
+      "active": false,
+      "addedOn": "September 11 2020"
+   }
+]

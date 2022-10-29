@@ -1,0 +1,56 @@
+[
+   {
+      "projectId": 1,
+      "projectTitle": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+      "projectDescription": "Easy upgrade for faster boot-up, shutdown, application load and response",
+      "projectCategory": {
+         "categoryId": 1,
+         "categoryName": "Electronics",
+         "categoryDescription": "",
+         "categoryImageUrl": "",
+         "active": true,
+         "addedOn": "August 10 2020"
+      },
+      "projectCode": "PRD-ELE-1054",
+      "images": [
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX466_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX355_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX450_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX425_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX569_.jpg"
+      ],
+      "thumbnailImage": 0,
+      "price": 300,
+      "addedOn": "November 30 2021",
+      "ratings": 4
+   },
+   {
+      "projectId": 2,
+      "projectTitle": "HP Deskjet 2755e Wireless Color All-In-One Printer",
+      "projectDescription": "Network-Ready, Energy Star Certified, Decal-Printing, Cloud Print Enabled",
+      "projectCategory": {
+         "categoryId": 1,
+         "categoryName": "Electronics",
+         "categoryDescription": "",
+         "categoryImageUrl": "",
+         "active": true,
+         "addedOn": "August 10 2020"
+      },
+      "projectCode": "PRI-ELE-1054",
+      "images": [
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SL1500_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX569_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX569_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX569_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX569_.jpg"
+      ],
+      "thumbnailImage": 0,
+      "price": 6000,
+      "addedOn": "November 01 2021",
+      "ratings": 4.5
+   }
+]

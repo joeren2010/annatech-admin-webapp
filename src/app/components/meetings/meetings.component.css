@@ -1,0 +1,71 @@
+.container1 {
+   width: auto;
+   /* width: 104%; */
+   margin: 0 auto;
+}
+
+.container2 {
+   width: auto;
+   /* width: 100%; */
+}
+
+.col-sm-8 {
+   margin: 0 auto;
+}
+
+h3 {
+   text-align: center;
+   font-weight: bold;
+}
+
+h4 {
+   text-align: center;
+   font-weight: bold;
+}
+
+.modal {
+   z-index: none !important;
+}
+
+input[placeholder="MM-DD-YYYY"] {
+   width: 135%;
+   float: left;
+   /* height: 100%; */
+   /* background: blue; */
+   /* display: inline-block; */
+}
+
+input[placeholder="HH:MM AM/PM"] {
+   width: 80%;
+   float: right;
+   text-align: center;
+   /* height: 100%; */
+   /* background: blue; */
+   /* display: inline-block; */
+}
+
+/* label[id="YYYY/MM/DD"] {
+   text-align: center;
+}*/
+
+label[id="HH:MM AM/PM"] {
+   width: 100%;
+   text-align: center;
+}
+
+#valid {
+   text-align: center;
+   color: red;
+   font-size: 15px;
+   /* margin-left: 38px; */
+}
+
+#btn-toggle {
+   /* background-color: black; */
+   /* color: white; */
+   font-weight: bold;
+}
+
+/* #meetingModal {
+   z-index: 1039;
+} */

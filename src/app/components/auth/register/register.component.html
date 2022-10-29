@@ -1,0 +1,65 @@
+<div class="container-fluid vh-100">
+   <div class="row" style="height: inherit;">
+      <div class="col-12 col-sm-6 d-flex flex-column justify-content-center align-items-start px-4" id="bg">
+         <h1 class="text-white m-0 mb-1">AnnaTech</h1>
+         <p class="m-0 text-white h5">Admin Dashboard</p>
+         <ul class="list-group mt-5 text-white" style="list-style-type: none; margin: 0; padding: 0;">
+            <li>Manage Dynamic Content For Your Website</li>
+            <li>An Optimal, Reliable And Dynamic Web Backend</li>
+            <li>Modern Secure Interface Based On Google Cloud</li>
+         </ul>
+      </div>
+      <div class="col-12 col-sm-6 d-flex flex-column justify-content-center align-items-center">
+         <div class="card w-75 shadow-sm">
+            <div class="card-header bg-white border-0">
+               <h3 class="text-center m-0">Register</h3>
+            </div>
+            <div class="card-body">
+               <form>
+                  <div class="form-row">
+                     <div class="form-group col-sm-6">
+                        <label for="username">Username</label>
+                        <input type="username" class="form-control" id="username" autocomplete="off"
+                           aria-describedby="username" placeholder="enter username" required>
+                        <small id="usernameHelp" class="form-text text-muted">We'll never share your username with
+                           anyone
+                           else.</small>
+                     </div>
+                     <div class="form-group col-sm-6">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" autocomplete="off" aria-describedby="email"
+                           placeholder="eg: abc@test.com" required>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                           else.</small>
+                     </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="form-group col-sm-6">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" autocomplete="off" id="password"
+                           placeholder="enter your password" required>
+                     </div>
+                     <div class="form-group col-sm-6">
+                        <label for="cfm-password">Confirm Password</label>
+                        <input type="password" class="form-control" autocomplete="off" id="cfm-password"
+                           placeholder="confirm password" required>
+                     </div>
+                  </div>
+                  <div class="form-group form-check">
+                     <input type="checkbox" class="form-check-input" id="remember" required>
+                     <label class="form-check-label" for="remember">Remember Me</label> &nbsp; &nbsp; &nbsp; &nbsp;
+                     &nbsp;
+                     <!-- get code from getbootstrap.com -- Components -- Badge -- Links -->
+                     <a routerLink="/auth/login" class="badge badge-dark even-larger-badge">SignIn Here</a>
+
+                     <!-- make your code using router link as shown below, uncomment to use -->
+                     <!-- <a routerLink="/register">SignUp Here</a> -->
+                  </div>
+                  <button type="submit" class="btn btn-dark">Submit</button>
+               </form>
+            </div>
+         </div>
+
+      </div>
+   </div>
+</div>

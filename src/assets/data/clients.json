@@ -1,0 +1,47 @@
+[
+   {
+      "clientId": 1,
+      "clientname": "John",
+      "fullname": "John Snow",
+      "address": {
+         "street": "34 Norway Street",
+         "city": "Denver",
+         "state": "Colorado",
+         "country": "US",
+         "zipcode": 81007
+      },
+      "email": "jsnow@test.com",
+      "img": "",
+      "contact": "984-948-5545"
+   },
+   {
+      "clientId": 2,
+      "clientname": "Will",
+      "fullname": "Will Smith",
+      "address": {
+         "street": "301 Houston Street",
+         "city": "Houston",
+         "state": "Texas",
+         "country": "US",
+         "zipcode": 96226
+      },
+      "email": "wsmith@test.com",
+      "img": "",
+      "contact": "423-434-4545"
+   },
+   {
+      "clientId": 3,
+      "clientname": "Aria",
+      "fullname": "Aria Stark",
+      "address": {
+         "street": "301 Chicago Street",
+         "city": "Chicago",
+         "state": "Illinois",
+         "country": "US",
+         "zipcode": 856022
+      },
+      "email": "astark@test.com",
+      "img": "",
+      "contact": "122-284-4545"
+   }
+]

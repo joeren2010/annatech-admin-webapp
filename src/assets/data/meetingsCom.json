@@ -1,0 +1,78 @@
+[
+   {
+      "meetingId": 1,
+      "meetingTopic": "APC Engg - Skyrise",
+      "numPeople": 4,
+      "emailAddress": "jsnow@test.com",
+      "meetingDate": "04-05-2022",          
+      "meetingTime": "10:45 AM",          
+      "addedOn": "04-05-2022",          
+      "meetingDescription": "Status, completions...",      
+      "images": [
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX466_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX355_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX450_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX425_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX569_.jpg"
+      ]
+   },
+   {
+      "meetingId": 2,
+      "meetingTopic": "XYZ Tech - Schools",
+      "numPeople": 12,
+      "emailAddress": "wsmith@test.com",
+      "meetingDate": "06-23-2022",          
+      "meetingTime": "05:24 PM",          
+      "addedOn": "06-14-2022",          
+      "meetingDescription": "Updates, roadblocks...",     
+      "images": [
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SL1500_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX569_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX569_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX569_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX569_.jpg"
+      ]
+   },
+   {
+      "meetingId": 3,
+      "meetingTopic": "OPQ Ltd. - Building",
+      "numPeople": 6,
+      "emailAddress": "sjohn@test.com",
+      "meetingDate": "09-12-2022",          
+      "meetingTime": "09:30 AM",          
+      "addedOn": "09-10-2022",          
+      "meetingDescription": "Any current progress...",      
+      "images": [
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX466_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX355_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX450_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX425_.jpg",
+         "https://m.media-amazon.com/images/I/71J4Q8zM72L._SX569_.jpg"
+      ]
+   },
+   {
+      "meetingId": 4,
+      "meetingTopic": "JAY Corp - Hospital",
+      "numPeople": 9,
+      "emailAddress": "pdedeji@test.com",
+      "meetingDate": "02-15-2022",          
+      "meetingTime": "03:10 PM",          
+      "addedOn": "02-14-2022",          
+      "meetingDescription": "New Amazon project...",     
+      "images": [
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SL1500_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX569_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX569_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX569_.jpg",
+         "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX569_.jpg"
+      ]
+   }
+]
